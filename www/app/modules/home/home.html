@@ -1,0 +1,110 @@
+<ion-view>
+    <ion-content>
+        <div class="slideshow">
+        <img class="mySlides" src="assets/img/saladsbanner1.jpg">
+            <img class="mySlides" src="assets/img/vegwraps.jpg">
+             <img class="mySlides" src="assets/img/coffeeslide.png">
+             <img class="mySlides" src="assets/img/saladsbanners.jpg">
+             <img class="mySlides" src="assets/img/cupcakebanner.jpg">
+            <img class="mySlides" src="assets/img/saladbanner.jpg">
+              <img class="mySlides" src="assets/img/dessertsmenu.jpg">
+           <img class="mySlides" src="assets/img/lattebanner.jpg">
+            <img class="mySlides" src="assets/img/saladmenu.jpg">
+            <img class="mySlides" src="assets/img/recipebanner.png">
+           <img class="mySlides" src="assets/img/devilishdesserts.jpg">
+           
+           
+          
+            <img class="mySlides" src="assets/img/coffeemenu.jpg">
+            
+            <div class="center w3-section text-white display-bottomside">
+                <span class=" sindicator w3-badge right demo round-border transparent hover-white" onclick="currentDiv(1)"></span>
+                <span class="sindicator w3-badge right demo round-border transparent hover-white" onclick="currentDiv(2)"></span>
+                <span class="sindicator w3-badge right demo round-border transparent hover-white" onclick="currentDiv(3)"></span>
+                <span class="sindicator w3-badge right demo round-border transparent hover-white" onclick="currentDiv(4)"></span>
+            </div>
+        </div>
+        <div class="card menusection">
+            <div class="card">
+                <div class="item item-avatar menu-list wrapmenu" >
+                    <img src="assets/img/wraps.jpg" ng-click="wrap()">
+                    <div class="h2-title">
+                        <h2>Wraps</h2>
+                    </div>
+                </div>
+                <div class="item item-avatar menu-list saladmenu">
+                    <img src="assets/img/salad.jpg" ng-click="salads()">
+                    <div class="h2-title">
+                        <h2>Salad</h2>
+                    </div>
+                </div>
+                <div class="item item-avatar menu-list line" id="mainmenu">
+                    <img src="assets/img/iconslist.gif" ng-click="login()">
+                </div>
+                <div class="item item-avatar menu-list dessertmenu">
+                    <img src="assets/img/dessert.jpg" ng-click="desserts()">
+                    <div class="h2-title">
+                        <h2>Desserts</h2>
+                    </div>
+                </div>
+                <div class="item item-avatar menu-list beveragemenu">
+                    <img src="assets/img/beverage.jpg" ng-click="beverage()">
+                    <div class="h2-title">
+                        <h2>Beverages</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+    showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = x.length
+    }
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    x[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " w3-white";
+}
+</script>
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var y = document.getElementsByClassName("mySlides");
+    for (i = 0; i < y.length; i++) {
+       y[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > y.length) {myIndex = 1}
+    y[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 3 seconds
+}
+</script>

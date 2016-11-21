@@ -1,0 +1,89 @@
+<ion-view>
+    <ion-content>
+        <div class="row responsive-sm wrap-list">
+            <div class="col">
+                <div class="item item-input  wrap-dropdown">
+                    <div class="input-label">
+                        Hot Coffee Beverages
+                    </div>
+                </div>
+            </div>
+            <div class="col" ng-repeat='products in beverages'>
+                <div class="item wrap-item-list">
+                    <img ng-src="{{products.productImg}}" ng-click="modal.show();test(products);">
+                    <h2><img class="vegicon" src="assets/img/vegicon.svg">{{products.productName}}</h2>
+                    <p>{{products.productDescription}}</p>
+                 <!--     <div class="flex_row" ng-init="counter1  = 0" id="text1">
+                        <button class="button ion-minus " ng-click="decreaseItemCount(products)" id="btn"></button>
+                        <button id="centerbtn" ng-model="detail.child"> {{products.productQty}}</button>
+                        <button class="button  ion-plus " ng-click="increaseItemCount(products)" id="btn"></button>
+                    </div>
+                    -->
+                   
+                    <h3>Price</h3>
+                    <h3 class="h3-color">{{products.productPrice}}</h3>
+                    <button class="button button-small cart button-assertive" ng-click="add2cart(products);cartalert();">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="item item-input wrap-dropdown">
+                    <div class="input-label">
+                        Iced Coffee Beverages
+                    </div>
+                </div>
+            </div>
+            <div class="col" ng-repeat='products in coldbeverages'>
+                <div class="item wrap-item-list">
+                    <img ng-src="{{products.productImg}}" ng-click="modal.show();test(products);">
+                    <h2><img class="vegicon" src="assets/img/vegicon.svg">{{products.productName}}</h2>
+                    <p>{{products.productDescription}}</p>
+                  <!--   <div class="flex_row" ng-init="counter1  = 0" id="text1">
+                        <button class="button ion-minus " ng-click="decreaseItemCount(products)" id="btn"></button>
+                        <button id="centerbtn" ng-model="detail.child"> {{products.productQty}}</button>
+                        <button class="button  ion-plus " ng-click="increaseItemCount(products)" id="btn"></button>
+                    </div>
+                    -->
+                    <h3>Price</h3>
+                    <h3 class="h3-color">{{products.productPrice}}</h3>
+                    <button class="button button-small cart button-assertive" ng-click="add2cart(products);cartalert();">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+<script id="templates/modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive  heading quickview-head">
+            <h1 class="title">Quick View</h1>
+            <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <div class="row responsive-sm wrap-list">
+                <div class="col">
+                    <div class="item description-head">
+                        <h2><img class="vegicon" src="assets/img/vegicon.svg">{{productDetails.productName}}</h2>
+                        <p>{{productDetails.productDescription}}</p>
+                    </div>
+                    <div class="item item-body">
+                        <img class="full-image" ng-src="{{productDetails.productImg}}">
+                        <p>
+                            It was developed by the Adams Extract company in Gonzales, Tex. The original recipe, popularized in the 1940s, called for butter flavoring and shortening and is usually iced with boiled milk, or ermine, frosting.
+                        </p>
+                        <p>
+                            Price: {{productDetails.productPrice}}
+                        </p>
+                    </div>
+                    <!--
+                    <div class="flex_row" ng-init="counter1  = 0" id="text1">
+                        <button class="button ion-minus " ng-disabled="counter1 == 0" ng-click="counter1 = counter1 - 1" id="btn"></button>
+                        <button id="centerbtn" ng-model="detail.child"> {{counter1 }}</button>
+                        <button class="button  ion-plus " ng-click="counter1  = counter1  + 1" id="btn"></button>
+                    </div>
+                    -->
+                    <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="modal.hide()">Back</a>
+                    <a class="button icon-right ion-chevron-right button-clear button-dark desc-cart" ng-click="add2cart(productDetails);;modal.hide();">Add to cart</a>
+                </div>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>

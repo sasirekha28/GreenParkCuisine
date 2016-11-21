@@ -1,0 +1,41 @@
+<ion-view>
+    <ion-content>
+        <div class="row responsive-sm wrap-list">
+            <div class="col" ng-repeat='data in cartDetails track by $index' ng-int="getSubPrice(data)">
+                <div class="item wrap-item-list">
+                    <img ng-src="{{data.productImg}}" >
+                    <h2>{{data.productName}}</h2>
+                     <p>{{data.productDescription}}</p>
+                  
+                     <h3>Quantity</h3>
+
+                     <div class="flex_row"  id="text1">
+                        <button class="button ion-minus " ng-click="decreaseItemCount(data)" id="btn"></button>
+                                <button id="centerbtn" ng-model="detail.child"> {{data.productQty}}</button>
+                        <button class="button  ion-plus " ng-click="increaseItemCount(data);" id="btn"></button>
+                    </div>
+                      <h3>Price</h3>
+                    <h3 class="h3-color">{{data.productPrice}}</h3>
+                 
+                    <h3>Sub Total </h3>
+                    <h3 class="h3-color" >{{data.subTotal}}</h3>
+                   
+                    <button class="button button-small cart button-assertive quickview" ng-click="removeProduct($index)">Remove</button>
+                    
+                    
+                </div>
+            </div>
+           
+            <div class="back2home">
+        	<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="back2home()">Continue Shopping</a>
+
+        </div>
+       
+        <div class="checkout">
+        	<a class="button icon-right ion-chevron-right button-clear button-dark" ng-click="checkout()">Checkout</a>
+
+        </div>
+        </div>
+        
+    </ion-content>
+</ion-view> 

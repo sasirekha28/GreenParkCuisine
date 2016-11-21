@@ -1,0 +1,66 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive top-header">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon menu-icon" menu-toggle="left">
+                </button>
+                <img src="assets/img/greenparklogo.png" class="slide-img2-1" ng-click="back2home()">
+                <div class="usericon left" ng-if='isLogin'> 
+                    <i class="fa fa-user-circle" aria-hidden="true"  ng-click="profile()"></i>
+                </div>
+                <div class="usericon left" ng-if='!isLogin'> 
+                    <i class="fa fa-user-circle" aria-hidden="true"  ng-click="loginpage();"></i>
+                </div>
+               
+                <span class="right-buttons">
+                <div class="countericon" ng-click="cartdisplay()">
+                    <i class="fa fa-opencart" aria-hidden="true" ></i>
+                    <span class="cartcounter">{{cartDetails.length}}</span>
+                </div>
+                </span>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view>
+            <div class="bar bar-footer ">
+            </div>
+        </ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <div class="bar-positive top-header">
+            <div class="h1 title"><img src="assets/img/greenparklogo1.png" class="slide-img2-2"></div>
+        </div>
+        <ion-content class=" menu-scroll">
+            <div class="menu-wrapper ">
+          
+                <div class="item ion-ios-circle-filled">
+                    <side-list ng-click="home()">Home</side-list>
+                </div>
+              
+                <div class="item ion-ios-circle-filled">
+                    <side-list ng-click="wrap()">Wraps</side-list>
+                </div>
+                <div class="item ion-ios-circle-filled">
+                    <side-list ng-click="salad()">Salads</side-list>
+                </div>
+                <div class="item ion-ios-circle-filled">
+                    <side-list ng-click="dessert()">Desserts</side-list>
+                </div>
+                <div class="item ion-ios-circle-filled">
+                    <side-list ng-click="beverage()">Beverages</side-list>
+                </div>
+                <div class="item ion-ios-circle-filled">
+                    <side-list ng-click="aboutus()">About Us</side-list>
+                </div>
+                <div class="item ion-ios-circle-filled">
+                    <side-list ng-click="contactus()">Contact Us</side-list>
+                </div>
+                <div class="item ion-ios-circle-filled">
+                    <side-list ng-click="maps()">Locate Us</side-list>
+                </div>
+                <div ng-if='isLogin' class="item ion-ios-circle-filled">
+                    <side-list ng-click="logout()">Logout</side-list>
+                </div>
+            </div>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,62 @@
+<ion-view>
+    <ion-content>
+<div class="cardpage" ng-init='getPrice()'>
+    <div class="card">
+        <div class="debitheader">
+            <div class="item item-divider">
+                Credit card/Debit card: $ {{totalAmount}}
+            </div>
+        </div>
+      
+        <div class="yrName">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Your Name" ng-model="pay.name">
+                </label>
+            </div>
+        </div>
+       
+        <div class="cardNum">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Card Number" ng-model="pay.cardnumber" ng-maxlength="13" ng-minlength="13">
+                </label>
+            </div>
+        </div>
+        <div class="expDate">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="date" placeholder="Expiry Date" ng-model="pay.date">
+                </label>
+            </div>
+        </div>
+        <div class="cvv">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="password" placeholder="CVV" ng-minlength="3" ng-maxlength="3" ng-model="pay.cvv">
+                </label>
+            </div>
+        </div>
+        <div class="Address1">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Address line1" ng-model="pay.address1">
+                </label>
+            </div>
+        </div>
+        <div class="Address2">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Address line2" ng-model="pay.address2">
+                </label>
+            </div>
+        </div>
+        <div class="payNow">
+            <button class="button button-positive" ng-click="payNow(pay)">
+                Pay Now
+            </button>
+        </div>
+    </div>
+</div>
+</ion-content>
+</ion-view>

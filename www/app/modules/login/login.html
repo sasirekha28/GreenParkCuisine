@@ -1,0 +1,70 @@
+g<ion-view style="" class=" " id="page5" view-title="Login">
+    <ion-content class="has-header" padding="true" style="background: url(assets/img/restaurant2.jpg) center; background-size: cover; opacity: 0.8;">
+
+        <div class="loginform" ng-show="context.isactive">
+            <img src="assets/img/greenparklogo1.png">
+            <form name="loginForm" class="list" id="login-form1" novalidate >
+                <ion-list class=" " id="login-list2">
+
+                    <div class="app-icon">
+                        
+                    </div>
+                    <label class="item item-input item-floating-label loginlabel">
+                        <span class="input-label span-style">Email</span>
+                        <input class="input-style" ng-model="user.email" type="text" placeholder="Email" required>
+
+
+                        <span style="color:red" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
+        <span ng-show="loginForm.email.$error.required">Email is required.</span>
+            <span ng-show="loginForm.email.$error.email">Invalid email address.</span>
+            </span>
+                    </label>
+               
+
+                    <label class="item item-input item-floating-label loginlabel">
+                        <span class="input-label span-style">Password</span>
+                        <input class="input-style" ng-model="user.password" type="password" placeholder="Password">
+                    </label>
+
+                </ion-list>
+                <div style="height: 40px;" class="spacer"></div>
+
+                <button class=" button button-assertive  button-block  icon-left ion-ios-person login-btn" id="signup-button3" ng-click="signIn(user);">LOGIN
+                </button>
+                <button class=" button button-positive  button-block icon-left  ion-ios-personadd login-btn" id="signup-button4" ng-click="context.isactive=false">
+                SIGN UP
+                </button>
+            </form>
+            
+        </div>
+        
+        <div class="signupform" ng-hide="context.isactive">
+            <img src="assets/img/greenparklogo1.png">
+            
+            <form name="signupForm" class="list " id="signup-form2" novalidate class="simple-form">
+                <ion-list class=" " id="signup-list3">
+                    <div class="app-icon"></div>
+                    <label class="item item-input item-floating-label loginlabel">
+                        <span class="input-label span-style">Name</span>
+                        <input class="input-style" ng-model="user.name" type="text" placeholder="Name">
+                    </label>
+                    <label class="item item-input item-floating-label loginlabel">
+                        <span class="input-label span-style">Phone</span>
+                        <input class="input-style" ng-model="user.phone" type="number" placeholder="Phone" ng-maxlength="10">
+                    </label>
+                    <label class="item item-input item-floating-label loginlabel">
+                        <span class="input-label span-style">Email</span>
+                        <input class="input-style" ng-model="user.email" type="text" placeholder="Email">
+                    </label>
+                    <label class="item item-input item-floating-label loginlabel">
+                        <span class="input-label span-style">Password</span>
+                        <input class="input-style" ng-model="user.password" type="password" placeholder="Password">
+                    </label>
+                </ion-list>
+                <div style="width: 279px; height: 35px;" class="spacer"></div>
+                <button class=" button button-assertive  button-block  icon-left ion-ios-personadd login-btn" style="border-radius:0px 0px 0px 0px;" id="signup-button3" ng-click="signUp(user);">SIGN UP </button>
+                <button class=" button button-positive  button-block icon-left ion-ios-person login-btn" style="border-radius:0px 0px 0px 0px;" id="signup-button4" ng-click="context.isactive=true">LOGIN </button>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

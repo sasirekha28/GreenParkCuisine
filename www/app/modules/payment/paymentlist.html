@@ -1,0 +1,26 @@
+<ion-view view-title="Payment List" >
+<ion-content>
+
+
+
+<div class="row responsive-sm wrap-list" ng-if="isLogin">
+            <div class="col">
+                <div class="item wrap-item-list payment-history"  ng-repeat="data in paymentHistory">
+                   
+                    <h2>Name:{{data.name}}</h2>
+                     <h2>Card Number:{{data.cardnumber}} </h2>
+                    <h3>Expiry Date</h3>
+                    <h3 class="h3-color">{{data.date}}</h3>
+                    <br><br>
+                  
+                   
+                    <h2>Address Line 1:{{data.address1}}</h2><br>
+
+                    <h2>Address Line 2:{{data.address2}}</h2><br>
+                    Total Payed:{{data.totalAmount}}
+                </div>
+            </div>
+           
+        </div>
+</ion-content>
+</ion-view>

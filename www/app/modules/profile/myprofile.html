@@ -1,0 +1,28 @@
+<div class="row responsive-sm wrap-list">
+    <div class="col">
+    <div class="item wrap-item-list profile">
+
+    <div class="item item-avatar user-account profile-img" ng-click='getProfileImage()'>
+                    <img src="assets/img/userimg.png" ng-if='!profileImage'>
+                    <img src="{{profileImage}}" ng-if='profileImage'>
+                    <h2>{{profileInformation.name}}</h2> 
+
+
+
+     
+              </div><br>
+     <h2> Welcome {{profileInformation.name}} !</h2>
+      <h2>Name:{{profileInformation.name}}</h2>
+      
+      <h3>Email Id: {{profileInformation.email}}</h3>
+        </div>
+        <br><br>
+         <div class="back2home">
+        	<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="back2home()">Back</a>
+
+        </div>
+    </div>
+
+
+
+</div>
